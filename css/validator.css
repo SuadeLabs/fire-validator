@@ -1,3 +1,11 @@
+h1 {
+  margin-top: 1em;
+}
+
+textarea {
+  font-family: monospace;
+}
+
 .template {
   display: none;
   visibility: hidden;
@@ -17,8 +25,4 @@
 
 .green {
   color: green;
-}
-
-textarea {
-  font-family: monospace;
 }
