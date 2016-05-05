@@ -8,9 +8,14 @@
     return s.split('_').map(capitalize).join(' ');
   }
 
+  function removePrefix(s, p) {
+    return s ? s.replace(p, '') : s;
+  }
+
   window.utils = {
     capitalize: capitalize,
-    title: title
+    title: title,
+    removePrefix: removePrefix
   };
 
 })(window, jQuery);

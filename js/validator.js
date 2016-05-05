@@ -58,6 +58,7 @@
     var el = getTemplate('.error-row');
 
     el.find('.error-row-type').first().html(error.keyword);
+    el.find('.error-row-field').first().html(utils.removePrefix(error.dataPath, '.'));
     el.find('.error-row-description').first().html(error.message);
 
     return el;
