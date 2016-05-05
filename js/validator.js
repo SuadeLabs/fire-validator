@@ -1,6 +1,7 @@
 (function(window, $) {
 
   var schemas = window.schemas;
+  var utils = window.utils;
   var logger = new window.Logger($('.validation-message'));
   var jsonEl = $('#json');
   var resultsEl = $('#results');
@@ -70,7 +71,7 @@
     var el = getTemplate('.result')
       .attr('id', type);
 
-    el.find('.name').first().html(window.utils.title(type));
+    el.find('.name').first().html(utils.title(type));
     el.find('.schema-link').first().attr('href', schema.url);
     el.find('.error-table').hide();
 
