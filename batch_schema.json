@@ -14,11 +14,11 @@
       "minItems": 1,
       "items": {
         "oneOf": [
-            { "$ref": "http://suade.org/fire/schemas/data/account.json#" },
-            { "$ref": "http://suade.org/fire/schemas/data/customer.json#" },
-            { "$ref": "http://suade.org/fire/schemas/data/collateral.json#" },
-            { "$ref": "http://suade.org/fire/schemas/data/loan.json#" },
-            { "$ref": "http://suade.org/fire/schemas/data/loan_transaction.json#" }
+            { "$ref": "schemas/v0-dev/account.json#" },
+            { "$ref": "schemas/v0-dev/customer.json#" },
+            { "$ref": "schemas/v0-dev/collateral.json#" },
+            { "$ref": "schemas/v0-dev/loan.json#" },
+            { "$ref": "schemas/v0-dev/loan_transaction.json#" }
         ]
       }
     },
@@ -41,6 +41,5 @@
       }
     }
   },
-  "required": ["name", "data"],
-  "additionalProperties": false
+  "required": ["name", "data"]
 }
