@@ -3,6 +3,8 @@
   var schemas = window.schemas;
   var logger = new window.Logger($('.validation-message'));
   var jsonEl = $('#json');
+  var resultsEl = $('#results');
+  var results = {};
 
   function validate() {
     logger.clear();
@@ -101,12 +103,10 @@
     }
   }
 
-  var results = {};
-  var resultsContainer = $('#results');
   Object.keys(schemas).forEach(function(type) {
     var el = createResult(type, schemas[type]);
     results[type] = el;
-    resultsContainer.append(el);
+    resultsEl.append(el);
   });
 
   window.prettify = prettifyJSON;
