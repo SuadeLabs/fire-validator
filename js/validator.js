@@ -2,22 +2,13 @@
 
   var schemas = window.schemas;
   var logger = new window.Logger($('.validation-message'));
+  var jsonEl = $('#json');
 
-  function validate(json) {
+  function validate() {
     logger.clear();
-    json = $('#json').val();
 
-    if(!json) {
-      logger.log('Please provide some JSON to validate against');
-      return;
-    }
-
-    try {
-      json = JSON.parse(json);
-    } catch(e) {
-      logger.log('Invalid JSON');
-      return;
-    }
+    var json = lintJSON(jsonEl.val());
+    if(!json) { return; }
 
     var result = schemas['batch'].validate(json);
     updateResult('batch', result);
@@ -30,6 +21,31 @@
       });
     }
   };
+
+  function lintJSON(json) {
+    if(!json) {
+      logger.log('Please provide some JSON to validate against');
+      return;
+    }
+
+    try {
+      json = JSON.parse(json);
+    } catch(e) {
+      logger.log('Invalid JSON');
+      return;
+    }
+
+    return json;
+  }
+
+  function prettifyJSON() {
+    logger.clear();
+
+    var json = lintJSON(jsonEl.val());
+    if(!json) { return; }
+
+    jsonEl.val(JSON.stringify(json, null, "  "));
+  }
 
   function getTemplate(name) {
     return $('.template' + name)
@@ -92,6 +108,7 @@
     resultsContainer.append(el);
   });
 
+  window.prettify = prettifyJSON;
   window.validate = validate;
 
 })(window, jQuery);
