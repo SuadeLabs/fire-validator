@@ -1,20 +1,22 @@
 (function(window, $) {
 
   var schemas = window.schemas;
+  var logger = new window.Logger($('.validation-message'));
 
   function validate(json) {
+    logger.clear();
     json = $('#json').val();
 
     if(!json) {
-      // TODO proper messaging to UI
-      console.warn('Please provide some JSON to validate against');
+      logger.log('Please provide some JSON to validate against');
       return;
     }
 
     try {
       json = JSON.parse(json);
     } catch(e) {
-      console.error('Invalid JSON');
+      logger.log('Invalid JSON');
+      return;
     }
 
     var result = schemas['batch'].validate(json);

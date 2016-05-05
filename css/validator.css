@@ -26,3 +26,7 @@ textarea {
 .green {
   color: green;
 }
+
+.validation-message {
+  padding-top: 0.5em;
+}
