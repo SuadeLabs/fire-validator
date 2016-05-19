@@ -78,11 +78,14 @@
 
   var urls = {
     'batch': 'batch_schema.json',
-    'customer': 'schemas/v0-dev/customer.json',
-    'loan': 'schemas/v0-dev/loan.json',
-    'loan_transaction': 'schemas/v0-dev/loan_transaction.json',
-    'account': 'schemas/v0-dev/account.json',
-    'collateral': 'schemas/v0-dev/collateral.json'
+    'account': 'schemas/v1-dev/account.json',
+    'account_aggregate': 'schemas/v1-dev/account_aggregate.json',
+    'collateral': 'schemas/v1-dev/collateral.json',
+    'customer': 'schemas/v1-dev/customer.json',
+    'loan': 'schemas/v1-dev/loan.json',
+    'loan_aggregate': 'schemas/v1-dev/loan_aggregate.json',
+    'loan_transaction': 'schemas/v1-dev/loan_transaction.json',
+    'security': 'schemas/v1-dev/security.json'
   };
 
   var schemas = {};
