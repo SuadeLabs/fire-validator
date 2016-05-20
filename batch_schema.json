@@ -14,11 +14,11 @@
       "minItems": 1,
       "items": {
         "oneOf": [
-            { "$ref": "schemas/v0-dev/account.json#" },
-            { "$ref": "schemas/v0-dev/customer.json#" },
-            { "$ref": "schemas/v0-dev/collateral.json#" },
-            { "$ref": "schemas/v0-dev/loan.json#" },
-            { "$ref": "schemas/v0-dev/loan_transaction.json#" }
+            { "$ref": "schemas/v1-dev/account.json#" },
+            { "$ref": "schemas/v1-dev/customer.json#" },
+            { "$ref": "schemas/v1-dev/collateral.json#" },
+            { "$ref": "schemas/v1-dev/loan.json#" },
+            { "$ref": "schemas/v1-dev/loan_transaction.json#" }
         ]
       }
     },
