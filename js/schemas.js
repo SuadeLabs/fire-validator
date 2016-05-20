@@ -78,7 +78,7 @@
 
   var version = 'schemas/v1-dev/';
   var urls = {
-    'batch': 'batch_schema.json',
+    'batch': version + 'batch.json',
     'account': version + 'account.json',
     'account_aggregate': version + 'account_aggregate.json',
     'collateral': version + 'collateral.json',
