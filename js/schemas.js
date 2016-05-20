@@ -76,16 +76,17 @@
     }
   }
 
+  var version = 'schemas/v1-dev/';
   var urls = {
     'batch': 'batch_schema.json',
-    'account': 'schemas/v1-dev/account.json',
-    'account_aggregate': 'schemas/v1-dev/account_aggregate.json',
-    'collateral': 'schemas/v1-dev/collateral.json',
-    'customer': 'schemas/v1-dev/customer.json',
-    'loan': 'schemas/v1-dev/loan.json',
-    'loan_aggregate': 'schemas/v1-dev/loan_aggregate.json',
-    'loan_transaction': 'schemas/v1-dev/loan_transaction.json',
-    'security': 'schemas/v1-dev/security.json'
+    'account': version + 'account.json',
+    'account_aggregate': version + 'account_aggregate.json',
+    'collateral': version + 'collateral.json',
+    'customer': version + 'customer.json',
+    'loan': version + 'loan.json',
+    'loan_aggregate': version + 'loan_aggregate.json',
+    'loan_transaction': version + 'loan_transaction.json',
+    'security': version + 'security.json'
   };
 
   var schemas = {};
