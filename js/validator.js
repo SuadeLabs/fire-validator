@@ -16,13 +16,12 @@
     var result = schemas['batch'].validate(json);
     updateResult('batch', result);
 
-    if(json.data && json.data.length) {
-      var entry = json.data[0];
-      $.each(schemas, function(type, schema) {
-        if(type === 'batch') { return; }
-        updateResult(type, schema.validate(entry));
-      });
-    }
+    var entry = json.data && json.data.length ? json.data[0] : json;
+
+    $.each(schemas, function(type, schema) {
+      if(type === 'batch') { return; }
+      updateResult(type, schema.validate(entry));
+    });
   };
 
   function lintJSON(json) {
