@@ -81,6 +81,7 @@
     'batch': version + 'batch.json',
     'account': version + 'account.json',
     'account_aggregate': version + 'account_aggregate.json',
+    'entity': version + 'entity.json',
     'collateral': version + 'collateral.json',
     'customer': version + 'customer.json',
     'loan': version + 'loan.json',
@@ -91,7 +92,10 @@
 
   var schemas = {};
   Object.keys(urls).forEach(function(type) {
-    schemas[type] = new Schema(type, urls[type]);
+    // Base schemas listed here so they are cached, but not displayed
+    if(['entity'].indexOf(type) === -1) {
+      schemas[type] = new Schema(type, urls[type]);
+    }
   });
 
   window.schemas = schemas;
