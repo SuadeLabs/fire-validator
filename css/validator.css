@@ -30,3 +30,7 @@ textarea {
 .validation-message {
   padding-top: 0.5em;
 }
+
+.lint-table {
+  display: none;
+}

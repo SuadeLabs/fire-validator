@@ -9,6 +9,7 @@
 
   function validate() {
     logger.clear();
+    $('.lint-table').hide();
 
     var json = lintJSON(jsonEl.val());
     if(!json) { return; }
@@ -30,14 +31,14 @@
       return;
     }
 
-    try {
-      json = JSON.parse(json);
-    } catch(e) {
+    var results = jslint(json);
+    if(!results.ok) {
       logger.log('Invalid JSON');
+      updateLintWarnings(results.warnings);
       return;
     }
 
-    return json;
+    return JSON.parse(json);
   }
 
   function prettifyJSON() {
@@ -54,6 +55,25 @@
       .first()
       .clone()
       .removeClass('template');
+  }
+
+  function createLintRow(warning) {
+    var el = getTemplate('.lint-row');
+
+    el.find('.lint-row-line').first().html(warning.line);
+    el.find('.lint-row-warning').first().html(warning.message);
+
+    return el;
+  }
+
+  function updateLintWarnings(warnings) {
+    var table = $('.lint-table');
+    var rows = warnings.map(createLintRow);
+
+    table.find('.lint-row').not('.template').remove();
+    table.find('tbody').append(rows);
+
+    table.show();
   }
 
   function createErrorRow(error) {
@@ -91,9 +111,7 @@
       table.show();
       noneMessage.hide();
 
-      var rows = result.errors.map(function(error) {
-        return createErrorRow(error);
-      });
+      var rows = result.errors.map(createErrorRow);
 
       table.find('.error-row').not('.template').remove();
       table.find('tbody').append(rows);
