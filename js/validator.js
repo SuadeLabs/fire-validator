@@ -24,7 +24,15 @@
         // Validate a list of data (batch)
         $.each(json.data, function(idx, entry) {
           var result = schema.validate(entry);
-          updateResult(type, result);
+
+          // Cludge in the index of this entry into the error so that the user knows where to find the bug.
+          $.each(result.errors, function(err_idx, err) {
+            if (err.dataPath) {
+              result.errors[err_idx].dataPath = 'data[' + idx + '].' + err.dataPath
+            }
+          });
+
+          updateResult(type, result, entry);
           if (!result.status) {
             return false;
           }
