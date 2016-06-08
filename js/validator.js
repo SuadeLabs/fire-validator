@@ -31,7 +31,7 @@
       return;
     }
 
-    var results = jslint(json);
+    var results = jslint(json, { white: true });
     if(!results.ok) {
       logger.log('Invalid JSON');
       updateLintWarnings(results.warnings);
