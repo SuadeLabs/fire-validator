@@ -17,11 +17,22 @@
     var result = schemas['batch'].validate(json);
     updateResult('batch', result);
 
-    var entry = json.data && json.data.length ? json.data[0] : json;
-
     $.each(schemas, function(type, schema) {
       if(type === 'batch') { return; }
-      updateResult(type, schema.validate(entry));
+
+      if (json.data && json.data.length) {
+        // Validate a list of data (batch)
+        $.each(json.data, function(idx, entry) {
+          var result = schema.validate(entry);
+          updateResult(type, result);
+          if (!result.status) {
+            return false;
+          }
+        });
+      } else {
+        // Not part of a batch, must be a single instance of a FIRE object
+        updateResult(type, schema.validate(json));
+      }
     });
   };
 
