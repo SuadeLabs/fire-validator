@@ -87,7 +87,11 @@
     'loan': version + 'loan.json',
     'loan_aggregate': version + 'loan_aggregate.json',
     'loan_transaction': version + 'loan_transaction.json',
-    'security': version + 'security.json'
+    'security': version + 'security.json',
+    'exchange_rate': version + 'exchange_rate.json',
+    'issuer': version + 'issuer.json',
+    'guarantor': version + 'guarantor.json',
+    'derivative': version + 'derivative.json'
   };
 
   var schemas = {};
