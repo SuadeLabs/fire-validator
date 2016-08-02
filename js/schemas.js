@@ -91,7 +91,8 @@
     'exchange_rate': version + 'exchange_rate.json',
     'issuer': version + 'issuer.json',
     'guarantor': version + 'guarantor.json',
-    'derivative': version + 'derivative.json'
+    'derivative': version + 'derivative.json',
+    'types': version + 'types.json'
   };
 
   var schemas = {};
