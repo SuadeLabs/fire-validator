@@ -81,17 +81,17 @@
     'batch': version + 'batch.json',
     'account': version + 'account.json',
     'account_aggregate': version + 'account_aggregate.json',
-    'entity': version + 'entity.json',
     'collateral': version + 'collateral.json',
     'customer': version + 'customer.json',
+    'derivative_cash_flow': version + 'derivative_cash_flow.json',
+    'entity': version + 'entity.json',
+    'exchange_rate': version + 'exchange_rate.json',
+    'guarantor': version + 'guarantor.json',
+    'issuer': version + 'issuer.json',
     'loan': version + 'loan.json',
     'loan_aggregate': version + 'loan_aggregate.json',
     'loan_transaction': version + 'loan_transaction.json',
     'security': version + 'security.json',
-    'exchange_rate': version + 'exchange_rate.json',
-    'issuer': version + 'issuer.json',
-    'guarantor': version + 'guarantor.json',
-    'derivative': version + 'derivative.json',
     'types': version + 'types.json'
   };
 
