@@ -79,11 +79,11 @@
   var urls = {
     'batch': 'batch_schema.json',
     'account': 'schemas/v1-dev/account.json',
-    'account_aggregate': 'schemas/v1-dev/account_aggregate.json',
     'collateral': 'schemas/v1-dev/collateral.json',
+    'derivative': 'schemas/v1-dev/derivative.json',
+    'derivative_cash_flow': 'schemas/v1-dev/derivative_cash_flow.json',
     'customer': 'schemas/v1-dev/customer.json',
     'loan': 'schemas/v1-dev/loan.json',
-    'loan_aggregate': 'schemas/v1-dev/loan_aggregate.json',
     'loan_transaction': 'schemas/v1-dev/loan_transaction.json',
     'security': 'schemas/v1-dev/security.json'
   };
