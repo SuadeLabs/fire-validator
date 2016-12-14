@@ -84,9 +84,11 @@
     'collateral': 'schemas/v1-dev/collateral.json',
     'derivative': 'schemas/v1-dev/derivative.json',
     'derivative_cash_flow': 'schemas/v1-dev/derivative_cash_flow.json',
+    'exchange_rate': 'schemas/v1-dev/exchange_rate.json',
     'customer': 'schemas/v1-dev/customer.json',
     'loan': 'schemas/v1-dev/loan.json',
-    'loan_transaction': 'schemas/v1-dev/loan_transaction.json'
+    'loan_transaction': 'schemas/v1-dev/loan_transaction.json',
+    'security': 'schemas/v1-dev/security.json'
   };
 
   var schemas = {};
