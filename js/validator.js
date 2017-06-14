@@ -17,10 +17,11 @@
     updateResult('batch', result);
 
     if(json.data && json.data.length) {
-      var entry = json.data[0];
-      $.each(schemas, function(type, schema) {
-        if(type === 'batch') { return; }
-        updateResult(type, schema.validate(entry));
+      $.each(json.data, function (i, entry) {
+        $.each(schemas, function(type, schema) {
+          if(type === 'batch') { return; }
+          updateResult(type, schema.validate(entry));
+        });
       });
     }
   };
