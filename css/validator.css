@@ -1,5 +1,6 @@
 h1 {
   margin-top: 1em;
+  color: white;
 }
 
 textarea {
@@ -29,4 +30,10 @@ textarea {
 
 .validation-message {
   padding-top: 0.5em;
+}
+
+.bkg_fire {
+	background: url("/blueprint_fire.jpg");
+	background-attachment: fixed;
+	top: 0 !important;
 }
